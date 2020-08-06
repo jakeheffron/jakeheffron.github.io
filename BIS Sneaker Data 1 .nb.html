@@ -1748,6 +1748,7 @@ summary {
 </div>
 
 
+<!-- rnb-text-begin -->
 <p>This summer, our team has been working on a model to help predict the prices of highly sought-after sneakers. Jake Heffron, Jake Hennes, Kailey Hetler, and Truett Pittman, have utilized several R packages to analyze Tweets leading up to a new sneaker’s release to gain understanding of the public’s anticipation for the launch. This website explains how the team gathered, compiled, and analyzed the data to prove the hypothesis.</p>
 <p>In theory, the relationship between tweet sentiment and the launch markup from suggested retail price will allow the team to predict a sneaker’s selling price before its launch.</p>
 <p>Initially, the team set out to gather thousands of tweets to analyze. Using the rtweet package and a custom twitter developer app, the team pulled tweets from the days leading up to seven individual sneaker launches. The following shoes were analyzed:</p>
@@ -1761,10 +1762,17 @@ summary {
 <li>Jordan XI Low Concord</li>
 </ul>
 <p>For each sneaker, a table</p>
-<pre class="{r}"><code>plot(cars)</code></pre>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
+<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
+<!-- rnb-text-end -->
 
 <div id="rmd-source-code">LS0tDQp0aXRsZTogIlRDVSBCSVMgRGF0YSBTY2llbmNlIENvbXBldGl0aW9uIC0gU25lYWtlcnMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIHN1bW1lciwgb3VyIHRlYW0gaGFzIGJlZW4gd29ya2luZyBvbiBhIG1vZGVsIHRvIGhlbHAgcHJlZGljdCB0aGUgcHJpY2VzIG9mIGhpZ2hseSBzb3VnaHQtYWZ0ZXIgc25lYWtlcnMuIEpha2UgSGVmZnJvbiwgSmFrZSBIZW5uZXMsIEthaWxleSBIZXRsZXIsIGFuZCBUcnVldHQgUGl0dG1hbiwgaGF2ZSB1dGlsaXplZCBzZXZlcmFsIFIgcGFja2FnZXMgdG8gYW5hbHl6ZSBUd2VldHMgbGVhZGluZyB1cCB0byBhIG5ldyBzbmVha2VyJ3MgcmVsZWFzZSB0byBnYWluIHVuZGVyc3RhbmRpbmcgb2YgdGhlIHB1YmxpYydzIGFudGljaXBhdGlvbiBmb3IgdGhlIGxhdW5jaC4gVGhpcyB3ZWJzaXRlIGV4cGxhaW5zIGhvdyB0aGUgdGVhbSBnYXRoZXJlZCwgY29tcGlsZWQsIGFuZCBhbmFseXplZCB0aGUgZGF0YSB0byBwcm92ZSB0aGUgaHlwb3RoZXNpcy4NCg0KSW4gdGhlb3J5LCB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gdHdlZXQgc2VudGltZW50IGFuZCB0aGUgbGF1bmNoIG1hcmt1cCBmcm9tIHN1Z2dlc3RlZCByZXRhaWwgcHJpY2Ugd2lsbCBhbGxvdyB0aGUgdGVhbSB0byBwcmVkaWN0IGEgc25lYWtlcidzIHNlbGxpbmcgcHJpY2UgYmVmb3JlIGl0cyBsYXVuY2guDQoNCkluaXRpYWxseSwgdGhlIHRlYW0gc2V0IG91dCB0byBnYXRoZXIgdGhvdXNhbmRzIG9mIHR3ZWV0cyB0byBhbmFseXplLiBVc2luZyB0aGUgcnR3ZWV0IHBhY2thZ2UgYW5kIGEgY3VzdG9tIHR3aXR0ZXIgZGV2ZWxvcGVyIGFwcCwgdGhlIHRlYW0gcHVsbGVkIHR3ZWV0cyBmcm9tIHRoZSBkYXlzIGxlYWRpbmcgdXAgdG8gc2V2ZW4gaW5kaXZpZHVhbCBzbmVha2VyIGxhdW5jaGVzLiBUaGUgZm9sbG93aW5nIHNob2VzIHdlcmUgYW5hbHl6ZWQ6DQoNCi0gTmlrZSBBaXIgTWF4IEdyZWVuDQotIE5pa2UgQWlyIE1heCBPcmFuZ2UNCi0gR3JhdGVmdWwgRGVhZCBEdW5rDQotIEpvcmRhbiBVbml2ZXJzaXR5IEdvbGQNCi0gT2ZmIFdoaXRlIEpvcmRhbiBTYWlsDQotIFllZXp5IEJsdWUgT2F0DQotIEpvcmRhbiBYSSBMb3cgQ29uY29yZA0KDQpGb3IgZWFjaCBzbmVha2VyLCBhIHRhYmxlIA0KDQpgYGB7cn0NCnBsb3QoY2FycykNCmBgYA0KDQpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ3RybCtBbHQrSSouDQoNCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ3RybCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLg0KDQpUaGUgcHJldmlldyBzaG93cyB5b3UgYSByZW5kZXJlZCBIVE1MIGNvcHkgb2YgdGhlIGNvbnRlbnRzIG9mIHRoZSBlZGl0b3IuIENvbnNlcXVlbnRseSwgdW5saWtlICpLbml0KiwgKlByZXZpZXcqIGRvZXMgbm90IHJ1biBhbnkgUiBjb2RlIGNodW5rcy4gSW5zdGVhZCwgdGhlIG91dHB1dCBvZiB0aGUgY2h1bmsgd2hlbiBpdCB3YXMgbGFzdCBydW4gaW4gdGhlIGVkaXRvciBpcyBkaXNwbGF5ZWQuDQo=</div>
 
@@ -1813,7 +1821,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("BIS Sneaker Data 1.html");
+  window.initializeSourceEmbed("BIS Sneaker Data 1 .rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
