@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Combining Data | TCU BIS Data Science Competition - Sneakers</title>
+  <meta name="description" content="3 Combining Data | TCU BIS Data Science Competition - Sneakers" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Combining Data | TCU BIS Data Science Competition - Sneakers" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Combining Data | TCU BIS Data Science Competition - Sneakers" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="extracting-twitter-data.html"/>
+<link rel="next" href="data-visualization.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="extracting-twitter-data.html"><a href="extracting-twitter-data.html"><i class="fa fa-check"></i><b>2</b> Extracting Twitter Data</a></li>
+<li class="chapter" data-level="3" data-path="combining-data.html"><a href="combining-data.html"><i class="fa fa-check"></i><b>3</b> Combining Data</a></li>
+<li class="chapter" data-level="4" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-visualization.html"><a href="data-visualization.html#preparing-data"><i class="fa fa-check"></i><b>4.1</b> Preparing Data</a></li>
+<li class="chapter" data-level="4.2" data-path="data-visualization.html"><a href="data-visualization.html#histogram"><i class="fa fa-check"></i><b>4.2</b> Histogram</a></li>
+<li class="chapter" data-level="4.3" data-path="data-visualization.html"><a href="data-visualization.html#line-chart"><i class="fa fa-check"></i><b>4.3</b> Line Chart</a></li>
+<li class="chapter" data-level="4.4" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plots"><i class="fa fa-check"></i><b>4.4</b> Scatter Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>5</b> Conclusion</a><ul>
+<li class="chapter" data-level="5.1" data-path="conclusion.html"><a href="conclusion.html#bibliography"><i class="fa fa-check"></i><b>5.1</b> Bibliography</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">TCU BIS Data Science Competition - Sneakers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="combining-data" class="section level1">
+<h1><span class="header-section-number">3</span> Combining Data</h1>
+<p>Given that the rtweet data frames contained over 90 attributes for each query, the team condensed the data frames down to the individual tweets.</p>
+<p>Next, utilizing the tidytext and dplyr packages, individual words from tweets were extracted and tokenized into another data frame to then evaluate sentiment. Stop words such as “and,” “but,” and “the,” among others, were also extracted since they aren’t as valuable for evaluating sentiment as other descriptive words in the tweets. The team utilized the basic tidytext data set containing the stop
+words.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="combining-data.html#cb2-1"></a><span class="kw">library</span>(tidytext)</span>
+<span id="cb2-2"><a href="combining-data.html#cb2-2"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb2-3"><a href="combining-data.html#cb2-3"></a></span>
+<span id="cb2-4"><a href="combining-data.html#cb2-4"></a>jordan_<span class="dv">11</span>_low_concord_tweets_df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">created_at =</span> jordan.<span class="fl">11.</span>low.concord.tweets<span class="op">$</span>created_at, </span>
+<span id="cb2-5"><a href="combining-data.html#cb2-5"></a>                             <span class="dt">text =</span> jordan.<span class="fl">11.</span>low.concord.tweets<span class="op">$</span>text)</span>
+<span id="cb2-6"><a href="combining-data.html#cb2-6"></a></span>
+<span id="cb2-7"><a href="combining-data.html#cb2-7"></a>tidy_jordan_<span class="dv">11</span>_low_concord &lt;-<span class="st"> </span>jordan_<span class="dv">11</span>_low_concord_tweets_df <span class="op">%&gt;%</span></span>
+<span id="cb2-8"><a href="combining-data.html#cb2-8"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text)</span>
+<span id="cb2-9"><a href="combining-data.html#cb2-9"></a></span>
+<span id="cb2-10"><a href="combining-data.html#cb2-10"></a>tidy_jordan_<span class="dv">11</span>_low_concord &lt;-<span class="st"> </span>tidy_jordan_<span class="dv">11</span>_low_concord <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">anti_join</span>(stop_words, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;word&quot;</span> =<span class="st"> &quot;word&quot;</span>))</span></code></pre></div>
+<p>The data frame was further modified using the lubridate package to generate a more meaningful way to classify dates from individual words within the tweets.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="combining-data.html#cb3-1"></a><span class="kw">library</span>(lubridate) <span class="co"># for the function as_date</span></span>
+<span id="cb3-2"><a href="combining-data.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="combining-data.html#cb3-3"></a>tidy_jordan_<span class="dv">11</span>_low_concord<span class="op">$</span>created_at &lt;-<span class="st"> </span><span class="kw">as_date</span>(tidy_jordan_<span class="dv">11</span>_low_concord<span class="op">$</span>created_at) <span class="co"># By date, drop time stamp so we can generate a meaningful count by time</span></span>
+<span id="cb3-4"><a href="combining-data.html#cb3-4"></a>jordan_<span class="dv">11</span>_low_tweet_word_count_by_date &lt;-<span class="st"> </span>tidy_jordan_<span class="dv">11</span>_low_concord <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(created_at) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) </span>
+<span id="cb3-5"><a href="combining-data.html#cb3-5"></a><span class="kw">ungroup</span>(jordan_<span class="dv">11</span>_low_tweet_word_count_by_date)</span></code></pre></div>
+<p>Then, to evaluate the sentiment of individual words, the team created a list of common slang words related to “sneaker heads,” or those engaged in the frequent buying and selling of the hottest sneakers, and assigned values ranging from (-5,5) with -5 being the most negative and 5 being the most positive. The slang words were then combined with the afinn dataset containing a list of about 2400 other descriptive words in the english dictionary. However, because afinn already had duplicate words contained in the team’s “slang dictionary,” duplicate words were dropped from the afinn dataset so that the values generated by the team were utilized for the duplicate words.</p>
+<p>Please note that common slang words may be rather inapproriate, however the intent was to properly evaluate the sentiment of modern culture towards popular sneakers.</p>
+<p>Finally, a new data frame called “j_11_low_sentiment_data_by_date” was created to store the number of words analyzed per day, the sum of sentiment per day, and the number of negative words per day for the “Jordan 11 Low Concord.” This process was repeated for each sneaker.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="combining-data.html#cb4-1"></a><span class="kw">library</span>(textdata) <span class="co"># Supports afinn, (-5 to 5), bing, loughran, and nrc lexicons</span></span>
+<span id="cb4-2"><a href="combining-data.html#cb4-2"></a></span>
+<span id="cb4-3"><a href="combining-data.html#cb4-3"></a>jordan_<span class="dv">11</span>_low_concord_afinn &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">word =</span> <span class="kw">c</span>(<span class="st">&#39;sick&#39;</span>, <span class="st">&#39;rad&#39;</span>, <span class="st">&#39;dope&#39;</span>, <span class="st">&#39;badass&#39;</span>, <span class="st">&#39;hype&#39;</span>, <span class="st">&#39;chill&#39;</span>, <span class="st">&#39;fly&#39;</span>, <span class="st">&#39;fire&#39;</span>, <span class="st">&#39;lit&#39;</span>, <span class="st">&#39;fleek&#39;</span>, <span class="st">&#39;goals&#39;</span>,<span class="st">&#39;need&#39;</span>, <span class="st">&#39;hit&#39;</span>, <span class="st">&#39;L&#39;</span>, <span class="st">&#39;trash&#39;</span>, <span class="st">&#39;garbage&#39;</span>, <span class="st">&#39;legit&#39;</span>, <span class="st">&#39;hook&#39;</span>,<span class="st">&#39;cop&#39;</span>,<span class="st">&#39;buy&#39;</span>,<span class="st">&#39;finna&#39;</span>,<span class="st">&#39;purchase&#39;</span>,<span class="st">&#39;sleezy&#39;</span>,<span class="st">&#39;win&#39;</span>,<span class="st">&#39;lose&#39;</span>,<span class="st">&#39;hoed&#39;</span>, <span class="st">&#39;suck&#39;</span>,<span class="st">&#39;bitch&#39;</span>,<span class="st">&#39;shit&#39;</span>,<span class="st">&#39;damn&#39;</span>,<span class="st">&#39;fuck&#39;</span>,<span class="st">&#39;ass&#39;</span>,<span class="st">&#39;cheeks&#39;</span>,<span class="st">&#39;gay&#39;</span>,<span class="st">&#39;lowkey&#39;</span>,<span class="st">&#39;highkey&#39;</span>,<span class="st">&#39;steal&#39;</span>,  <span class="st">&#39;bad&#39;</span>, <span class="st">&#39;boujee&#39;</span>, <span class="st">&#39;bought&#39;</span>,<span class="st">&#39;buying&#39;</span>,<span class="st">&#39;bread&#39;</span>, <span class="st">&#39;called&#39;</span>, <span class="st">&#39;dreamy&#39;</span>, <span class="st">&#39;ima&#39;</span>,<span class="st">&#39;imma&#39;</span>,<span class="st">&#39;nah&#39;</span>,<span class="st">&#39;pass&#39;</span>,<span class="st">&#39;gtfo&#39;</span>, <span class="st">&#39;lol&#39;</span>,<span class="st">&#39;pricey&#39;</span>, <span class="st">&#39;expensive&#39;</span>,<span class="st">&#39;smoke&#39;</span>,<span class="st">&#39;wet&#39;</span>,<span class="st">&#39;snipe&#39;</span>,<span class="st">&#39;stylish&#39;</span>,<span class="st">&#39;style&#39;</span>, <span class="st">&#39;fresh&#39;</span>,<span class="st">&#39;grateful&#39;</span>,<span class="st">&#39;dead&#39;</span>,<span class="st">&quot;abomination&quot;</span>,<span class="st">&#39;heat&#39;</span>,<span class="st">&#39;hot&#39;</span>,<span class="st">&#39;hottest&#39;</span>,<span class="st">&#39;ice&#39;</span>,<span class="st">&#39;lax&#39;</span>,<span class="st">&#39;amped&#39;</span>,<span class="st">&#39;stoked&#39;</span>,<span class="st">&#39;bomb&#39;</span>,<span class="st">&#39;grease&#39;</span>,<span class="st">&#39;bro&#39;</span>,<span class="st">&#39;bruh&#39;</span>,<span class="st">&#39;juice&#39;</span>, <span class="st">&#39;peak&#39;</span>,<span class="st">&#39;fucking&#39;</span>,<span class="st">&#39;gnarly&#39;</span>,<span class="st">&#39;sketch&#39;</span>,<span class="st">&#39;sketchy&#39;</span>,<span class="st">&#39;lock&#39;</span>,<span class="st">&#39;bust&#39;</span>,<span class="st">&#39;steeze&#39;</span>,<span class="st">&#39;steezy&#39;</span>,<span class="st">&#39;yikes&#39;</span>,<span class="st">&#39;extra&#39;</span>,<span class="st">&#39;snatched&#39;</span>,<span class="st">&#39;fit&#39;</span>,<span class="st">&#39;bet&#39;</span>,<span class="st">&#39;shade&#39;</span>,<span class="st">&#39;flex&#39;</span>, <span class="st">&#39;flexed&#39;</span>,<span class="st">&#39;lewk&#39;</span>,<span class="st">&#39;slay&#39;</span>,<span class="st">&#39;shook&#39;</span>,<span class="st">&#39;stan&#39;</span>,<span class="st">&#39;yeet&#39;</span>,<span class="st">&#39;sus&#39;</span>,<span class="st">&#39;goat&#39;</span>,<span class="st">&#39;poppin&#39;</span>,<span class="st">&#39;pop&#39;</span>,<span class="st">&#39;cringe&#39;</span>,<span class="st">&#39;cringey&#39;</span>,<span class="st">&#39;oof&#39;</span>,<span class="st">&#39;mood&#39;</span>,<span class="st">&#39;mewd&#39;</span>,<span class="st">&#39;horny&#39;</span>,<span class="st">&#39;drip&#39;</span>,<span class="st">&#39;ratchet&#39;</span>, <span class="st">&#39;slaps&#39;</span>,<span class="st">&#39;slap&#39;</span>,<span class="st">&#39;basic&#39;</span>,<span class="st">&#39;yas&#39;</span>,<span class="st">&#39;gag&#39;</span>,<span class="st">&#39;gucci&#39;</span>,<span class="st">&#39;af&#39;</span>,<span class="st">&#39;turnt&#39;</span>), </span>
+<span id="cb4-4"><a href="combining-data.html#cb4-4"></a>                                      </span>
+<span id="cb4-5"><a href="combining-data.html#cb4-5"></a><span class="dt">value =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">5</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb4-6"><a href="combining-data.html#cb4-6"></a></span>
+<span id="cb4-7"><a href="combining-data.html#cb4-7"></a>remove_word_list &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">word =</span> <span class="kw">c</span>(<span class="st">&quot;bad&quot;</span>,<span class="st">&quot;drop&quot;</span>,<span class="st">&#39;grey&#39;</span>, <span class="st">&#39;lol&#39;</span>,<span class="st">&#39;mad&#39;</span>,<span class="st">&#39;sick&#39;</span>,<span class="st">&#39;badass&#39;</span>, <span class="st">&#39;steal&#39;</span>,<span class="st">&#39;suck&#39;</span>,<span class="st">&#39;fire&#39;</span>,<span class="st">&#39;ass&#39;</span>,<span class="st">&#39;shit&#39;</span>,<span class="st">&#39;bitch&#39;</span>,<span class="st">&#39;win&#39;</span>, <span class="st">&#39;grateful&#39;</span>, <span class="st">&#39;dead&#39;</span>),<span class="dt">value =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb4-8"><a href="combining-data.html#cb4-8"></a></span>
+<span id="cb4-9"><a href="combining-data.html#cb4-9"></a>afinn &lt;-<span class="st"> </span><span class="kw">anti_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;afinn&quot;</span>),remove_word_list, <span class="dt">by =</span> <span class="st">&quot;word&quot;</span>) </span>
+<span id="cb4-10"><a href="combining-data.html#cb4-10"></a>afinn_custom &lt;-<span class="st"> </span><span class="kw">rbind</span>(jordan_<span class="dv">11</span>_low_concord_afinn, afinn)</span>
+<span id="cb4-11"><a href="combining-data.html#cb4-11"></a>            </span>
+<span id="cb4-12"><a href="combining-data.html#cb4-12"></a>j_<span class="dv">11</span>_low &lt;-<span class="st"> </span><span class="kw">inner_join</span>(jordan_<span class="dv">11</span>_low_tweet_word_count_by_date, afinn_custom) <span class="co"># add the afinn variable of value</span></span>
+<span id="cb4-13"><a href="combining-data.html#cb4-13"></a>j_<span class="dv">11</span>_low_sentiment_data_by_date &lt;-<span class="st"> </span>j_<span class="dv">11</span>_low <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-14"><a href="combining-data.html#cb4-14"></a><span class="st">  </span><span class="kw">group_by</span>(created_at) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-15"><a href="combining-data.html#cb4-15"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(),                                    <span class="co"># social media count</span></span>
+<span id="cb4-16"><a href="combining-data.html#cb4-16"></a>            <span class="dt">total_sentiment =</span> <span class="kw">sum</span>(value),               <span class="co"># sum of sentiment</span></span>
+<span id="cb4-17"><a href="combining-data.html#cb4-17"></a>            <span class="dt">negative_words =</span> <span class="kw">length</span>(value[value <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>]),  <span class="co"># occurrences of negative words</span></span>
+<span id="cb4-18"><a href="combining-data.html#cb4-18"></a>  )</span></code></pre></div>
+<p>Below is the end result of the data frame for the Jordan 11 Low Concords:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">X</th>
+<th align="left">created_at</th>
+<th align="right">n</th>
+<th align="right">total_sentiment</th>
+<th align="right">negative_words</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">2020-07-02</td>
+<td align="right">1</td>
+<td align="right">-3</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">2020-07-03</td>
+<td align="right">7</td>
+<td align="right">8</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">2020-07-05</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">2020-07-06</td>
+<td align="right">2</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">2020-07-07</td>
+<td align="right">2</td>
+<td align="right">-6</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">2020-07-08</td>
+<td align="right">2</td>
+<td align="right">-2</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">2020-07-09</td>
+<td align="right">5</td>
+<td align="right">12</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">2020-07-10</td>
+<td align="right">8</td>
+<td align="right">6</td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="extracting-twitter-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

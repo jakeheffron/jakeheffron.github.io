@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Data Visualization | TCU BIS Data Science Competition - Sneakers</title>
+  <meta name="description" content="4 Data Visualization | TCU BIS Data Science Competition - Sneakers" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Data Visualization | TCU BIS Data Science Competition - Sneakers" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Data Visualization | TCU BIS Data Science Competition - Sneakers" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="combining-data.html"/>
+<link rel="next" href="conclusion.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="extracting-twitter-data.html"><a href="extracting-twitter-data.html"><i class="fa fa-check"></i><b>2</b> Extracting Twitter Data</a></li>
+<li class="chapter" data-level="3" data-path="combining-data.html"><a href="combining-data.html"><i class="fa fa-check"></i><b>3</b> Combining Data</a></li>
+<li class="chapter" data-level="4" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-visualization.html"><a href="data-visualization.html#preparing-data"><i class="fa fa-check"></i><b>4.1</b> Preparing Data</a></li>
+<li class="chapter" data-level="4.2" data-path="data-visualization.html"><a href="data-visualization.html#histogram"><i class="fa fa-check"></i><b>4.2</b> Histogram</a></li>
+<li class="chapter" data-level="4.3" data-path="data-visualization.html"><a href="data-visualization.html#line-chart"><i class="fa fa-check"></i><b>4.3</b> Line Chart</a></li>
+<li class="chapter" data-level="4.4" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plots"><i class="fa fa-check"></i><b>4.4</b> Scatter Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>5</b> Conclusion</a><ul>
+<li class="chapter" data-level="5.1" data-path="conclusion.html"><a href="conclusion.html#bibliography"><i class="fa fa-check"></i><b>5.1</b> Bibliography</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">TCU BIS Data Science Competition - Sneakers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-visualization" class="section level1">
+<h1><span class="header-section-number">4</span> Data Visualization</h1>
+<div id="preparing-data" class="section level2">
+<h2><span class="header-section-number">4.1</span> Preparing Data</h2>
+<p>Additional data preparation was needed to create the visualizations shown later in this section.</p>
+<p>An additional column was added to the each sneaker’s sentiment data frame. This column depicts the name of the sneaker, making it easier to group each sneaker’s data in the visualizations after the data frames were combined to form the final data frame used for the histogram and line chart visualizations, called “final_data_frame.” Also, a new column was added to the final_data_frame counting down the days from each sneakers’ launch.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-visualization.html#cb5-1"></a>j_<span class="dv">11</span>_low_sentiment_data_by_date<span class="op">$</span>source &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Jordan 11 Low Concord&quot;</span>, <span class="st">&quot;Jordan 11 Low Concord&quot;</span>, <span class="st">&quot;Jordan 11 Low Concord&quot;</span>, <span class="st">&quot;Jordan 11 Low Concord&quot;</span>, <span class="st">&quot;Jordan 11 Low Concord&quot;</span>, <span class="st">&quot;Jordan 11 Low Concord&quot;</span>, <span class="st">&quot;Jordan 11 Low Concord&quot;</span>, <span class="st">&quot;Jordan 11 Low Concord&quot;</span>)</span>
+<span id="cb5-2"><a href="data-visualization.html#cb5-2"></a></span>
+<span id="cb5-3"><a href="data-visualization.html#cb5-3"></a>final_data_frame &lt;-<span class="st"> </span><span class="kw">rbind</span>(final_data_frame, j_<span class="dv">11</span>_low_sentiment_data_by_date)</span>
+<span id="cb5-4"><a href="data-visualization.html#cb5-4"></a></span>
+<span id="cb5-5"><a href="data-visualization.html#cb5-5"></a>final_data_frame<span class="op">$</span>day &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span></code></pre></div>
+<p>Below is the final data frame for all of the seven shoes:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">X</th>
+<th align="left">created_at</th>
+<th align="right">n</th>
+<th align="right">total_sentiment</th>
+<th align="right">negative_words</th>
+<th align="left">source</th>
+<th align="right">day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">2020-07-02</td>
+<td align="right">1</td>
+<td align="right">-3</td>
+<td align="right">1</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">2020-07-03</td>
+<td align="right">7</td>
+<td align="right">8</td>
+<td align="right">1</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">2020-07-05</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">2020-07-06</td>
+<td align="right">2</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">2020-07-07</td>
+<td align="right">2</td>
+<td align="right">-6</td>
+<td align="right">2</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">2020-07-08</td>
+<td align="right">2</td>
+<td align="right">-2</td>
+<td align="right">1</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">2020-07-09</td>
+<td align="right">5</td>
+<td align="right">12</td>
+<td align="right">1</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">2020-07-10</td>
+<td align="right">8</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">2020-07-22</td>
+<td align="right">1</td>
+<td align="right">-2</td>
+<td align="right">1</td>
+<td align="left">Air Max Orange</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">2020-07-23</td>
+<td align="right">3</td>
+<td align="right">9</td>
+<td align="right">0</td>
+<td align="left">Air Max Orange</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">2020-07-24</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="left">Air Max Orange</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">2020-07-25</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">0</td>
+<td align="left">Air Max Orange</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">2020-07-26</td>
+<td align="right">4</td>
+<td align="right">14</td>
+<td align="right">0</td>
+<td align="left">Air Max Orange</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">2020-07-27</td>
+<td align="right">4</td>
+<td align="right">11</td>
+<td align="right">1</td>
+<td align="left">Air Max Orange</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">2020-07-28</td>
+<td align="right">6</td>
+<td align="right">15</td>
+<td align="right">0</td>
+<td align="left">Air Max Orange</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="left">2020-07-29</td>
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="left">Air Max Orange</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="left">2020-07-30</td>
+<td align="right">7</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="left">Air Max Orange</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="left">2020-07-22</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="left">Air Max Green</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="left">2020-07-23</td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="left">Air Max Green</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="left">2020-07-24</td>
+<td align="right">5</td>
+<td align="right">9</td>
+<td align="right">1</td>
+<td align="left">Air Max Green</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">21</td>
+<td align="left">2020-07-25</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="left">Air Max Green</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="left">2020-07-26</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">0</td>
+<td align="left">Air Max Green</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">23</td>
+<td align="left">2020-07-27</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="left">Air Max Green</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="left">2020-07-28</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="left">Air Max Green</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">25</td>
+<td align="left">2020-07-29</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="left">Air Max Green</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">26</td>
+<td align="left">2020-07-30</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">2</td>
+<td align="left">Air Max Green</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">27</td>
+<td align="left">2020-07-16</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">28</td>
+<td align="left">2020-07-17</td>
+<td align="right">9</td>
+<td align="right">7</td>
+<td align="right">2</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">29</td>
+<td align="left">2020-07-18</td>
+<td align="right">9</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">30</td>
+<td align="left">2020-07-19</td>
+<td align="right">6</td>
+<td align="right">12</td>
+<td align="right">0</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">31</td>
+<td align="left">2020-07-20</td>
+<td align="right">14</td>
+<td align="right">27</td>
+<td align="right">0</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">32</td>
+<td align="left">2020-07-21</td>
+<td align="right">25</td>
+<td align="right">33</td>
+<td align="right">5</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">33</td>
+<td align="left">2020-07-22</td>
+<td align="right">18</td>
+<td align="right">25</td>
+<td align="right">2</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">34</td>
+<td align="left">2020-07-23</td>
+<td align="right">29</td>
+<td align="right">35</td>
+<td align="right">6</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">35</td>
+<td align="left">2020-07-24</td>
+<td align="right">34</td>
+<td align="right">25</td>
+<td align="right">11</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">36</td>
+<td align="left">2020-07-17</td>
+<td align="right">6</td>
+<td align="right">9</td>
+<td align="right">1</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">37</td>
+<td align="left">2020-07-18</td>
+<td align="right">3</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">38</td>
+<td align="left">2020-07-19</td>
+<td align="right">8</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">39</td>
+<td align="left">2020-07-20</td>
+<td align="right">7</td>
+<td align="right">18</td>
+<td align="right">0</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">40</td>
+<td align="left">2020-07-21</td>
+<td align="right">17</td>
+<td align="right">23</td>
+<td align="right">3</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">41</td>
+<td align="left">2020-07-22</td>
+<td align="right">9</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">42</td>
+<td align="left">2020-07-23</td>
+<td align="right">14</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">43</td>
+<td align="left">2020-07-24</td>
+<td align="right">32</td>
+<td align="right">22</td>
+<td align="right">10</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">44</td>
+<td align="left">2020-07-17</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="right">45</td>
+<td align="left">2020-07-18</td>
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">46</td>
+<td align="left">2020-07-19</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">47</td>
+<td align="left">2020-07-20</td>
+<td align="right">9</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">48</td>
+<td align="left">2020-07-21</td>
+<td align="right">9</td>
+<td align="right">13</td>
+<td align="right">1</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">49</td>
+<td align="left">2020-07-22</td>
+<td align="right">4</td>
+<td align="right">11</td>
+<td align="right">0</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">50</td>
+<td align="left">2020-07-23</td>
+<td align="right">16</td>
+<td align="right">16</td>
+<td align="right">3</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">51</td>
+<td align="left">2020-07-24</td>
+<td align="right">14</td>
+<td align="right">16</td>
+<td align="right">3</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">52</td>
+<td align="left">2020-07-25</td>
+<td align="right">20</td>
+<td align="right">42</td>
+<td align="right">2</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">53</td>
+<td align="left">2020-07-17</td>
+<td align="right">5</td>
+<td align="right">13</td>
+<td align="right">0</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">54</td>
+<td align="left">2020-07-18</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">55</td>
+<td align="left">2020-07-19</td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">56</td>
+<td align="left">2020-07-20</td>
+<td align="right">11</td>
+<td align="right">12</td>
+<td align="right">2</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">57</td>
+<td align="left">2020-07-21</td>
+<td align="right">11</td>
+<td align="right">13</td>
+<td align="right">3</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">58</td>
+<td align="left">2020-07-22</td>
+<td align="right">3</td>
+<td align="right">10</td>
+<td align="right">0</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">59</td>
+<td align="left">2020-07-23</td>
+<td align="right">9</td>
+<td align="right">12</td>
+<td align="right">3</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">60</td>
+<td align="left">2020-07-24</td>
+<td align="right">9</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">61</td>
+<td align="left">2020-07-25</td>
+<td align="right">22</td>
+<td align="right">-13</td>
+<td align="right">13</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>A second data frame, called “scatter_frame,” was also created to be used for the scatter plot visualization.</p>
+<p>Essentially, the sentiment totals per day in the “final_data_frame” were summed to create a total sentiment value per sneaker spanning across the time frame in which the tweets were collected. This summation was then added to the “scatter_frame.”</p>
+<p>Moreover, StockX data, including each sneaker’s retail price, average resale price, and number of sales on the StockX platform, were manually collected from their <a href="https://stockx.com/">website</a>, and then added to the “scatter_frame.” Additionally, another column, called the “markup,” was calculated by dividing the average resale price by the retail price.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-visualization.html#cb6-1"></a><span class="co">#Store Total Sentiment for each sneaker in scatter_frame</span></span>
+<span id="cb6-2"><a href="data-visualization.html#cb6-2"></a>j_ll_sent_sum &lt;-<span class="st"> </span>final_data_frame <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(source <span class="op">==</span><span class="st"> &quot;Jordan 11 Low Concord&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">sum</span>(total_sentiment))</span>
+<span id="cb6-3"><a href="data-visualization.html#cb6-3"></a>ugdd_sent_sum &lt;-<span class="st"> </span>final_data_frame <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(source <span class="op">==</span><span class="st"> &quot;Grateful Dead Dunk&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">sum</span>(total_sentiment))</span>
+<span id="cb6-4"><a href="data-visualization.html#cb6-4"></a>jug_sent_sum &lt;-<span class="st"> </span>final_data_frame <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(source <span class="op">==</span><span class="st"> &quot;Jordan 12 University Gold&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">sum</span>(total_sentiment))</span>
+<span id="cb6-5"><a href="data-visualization.html#cb6-5"></a>amo_sent_sum &lt;-<span class="st"> </span>final_data_frame <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(source <span class="op">==</span><span class="st"> &quot;Air Max Orange&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">sum</span>(total_sentiment))</span>
+<span id="cb6-6"><a href="data-visualization.html#cb6-6"></a>amg_sent_sum &lt;-<span class="st"> </span>final_data_frame <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(source <span class="op">==</span><span class="st"> &quot;Air Max Green&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">sum</span>(total_sentiment))</span>
+<span id="cb6-7"><a href="data-visualization.html#cb6-7"></a>ybo_sent_sum &lt;-<span class="st"> </span>final_data_frame <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(source <span class="op">==</span><span class="st"> &quot;Yeezy 380 Blue Oat&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">sum</span>(total_sentiment))</span>
+<span id="cb6-8"><a href="data-visualization.html#cb6-8"></a>owjs_sent_sum &lt;-<span class="st"> </span>final_data_frame <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(source <span class="op">==</span><span class="st"> &quot;Off-White Jordan 4 Sail&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">sum</span>(total_sentiment))</span>
+<span id="cb6-9"><a href="data-visualization.html#cb6-9"></a></span>
+<span id="cb6-10"><a href="data-visualization.html#cb6-10"></a><span class="co">#Combine Rows to scatter_frame</span></span>
+<span id="cb6-11"><a href="data-visualization.html#cb6-11"></a>scatter_frame &lt;-<span class="st"> </span><span class="kw">rbind</span>(j_ll_sent_sum, ugdd_sent_sum)</span>
+<span id="cb6-12"><a href="data-visualization.html#cb6-12"></a>scatter_frame &lt;-<span class="st"> </span><span class="kw">rbind</span>(scatter_frame, jug_sent_sum)</span>
+<span id="cb6-13"><a href="data-visualization.html#cb6-13"></a>scatter_frame &lt;-<span class="st"> </span><span class="kw">rbind</span>(scatter_frame, amo_sent_sum)</span>
+<span id="cb6-14"><a href="data-visualization.html#cb6-14"></a>scatter_frame &lt;-<span class="st"> </span><span class="kw">rbind</span>(scatter_frame, amg_sent_sum)</span>
+<span id="cb6-15"><a href="data-visualization.html#cb6-15"></a>scatter_frame &lt;-<span class="st"> </span><span class="kw">rbind</span>(scatter_frame, ybo_sent_sum)</span>
+<span id="cb6-16"><a href="data-visualization.html#cb6-16"></a>scatter_frame &lt;-<span class="st"> </span><span class="kw">rbind</span>(scatter_frame, owjs_sent_sum)</span>
+<span id="cb6-17"><a href="data-visualization.html#cb6-17"></a></span>
+<span id="cb6-18"><a href="data-visualization.html#cb6-18"></a><span class="co">#Store Stock X data in scatter_frame</span></span>
+<span id="cb6-19"><a href="data-visualization.html#cb6-19"></a>scatter_frame<span class="op">$</span>source &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Jordan 11 Low Concord&quot;</span>, <span class="st">&quot;Grateful Dead Dunk&quot;</span>, <span class="st">&quot;Jordan 12 University Gold&quot;</span>, <span class="st">&quot;Air Max Orange&quot;</span>, <span class="st">&quot;Air Max Green&quot;</span>, <span class="st">&quot;Yeezy 380 Blue Oat&quot;</span>, <span class="st">&quot;Off-White Jordan 4 Sail&quot;</span>)</span>
+<span id="cb6-20"><a href="data-visualization.html#cb6-20"></a>scatter_frame<span class="op">$</span>retail_price &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">185</span>, <span class="dv">110</span>, <span class="dv">190</span>, <span class="dv">140</span>, <span class="dv">140</span>, <span class="dv">230</span>, <span class="dv">200</span>)</span>
+<span id="cb6-21"><a href="data-visualization.html#cb6-21"></a>scatter_frame<span class="op">$</span>avg_resale_price &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">223</span>,<span class="dv">1175</span>, <span class="dv">267</span>, <span class="dv">253</span>, <span class="dv">263</span>, <span class="dv">279</span>, <span class="dv">1090</span>)</span>
+<span id="cb6-22"><a href="data-visualization.html#cb6-22"></a>scatter_frame<span class="op">$</span>sales &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5238</span>, <span class="dv">1675</span>, <span class="dv">18595</span>, <span class="dv">620</span>, <span class="dv">728</span>, <span class="dv">1039</span>, <span class="dv">4744</span>)</span>
+<span id="cb6-23"><a href="data-visualization.html#cb6-23"></a>scatter_frame &lt;-<span class="st"> </span><span class="kw">transform</span>(scatter_frame, <span class="dt">markup =</span> avg_resale_price <span class="op">/</span>retail_price ) </span></code></pre></div>
+<p>Below is the final data frame utilized for the scatter plot visualizations. Reference the original retail price and resell price of each sneaker as you move through the visualizations:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">X</th>
+<th align="right">sum_total_sentiment</th>
+<th align="left">source</th>
+<th align="right">retail_price</th>
+<th align="right">avg_resale_price</th>
+<th align="right">markup</th>
+<th align="right">sales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">20</td>
+<td align="left">Jordan 11 Low Concord</td>
+<td align="right">185</td>
+<td align="right">223</td>
+<td align="right">1.21</td>
+<td align="right">5238</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">169</td>
+<td align="left">Grateful Dead Dunk</td>
+<td align="right">110</td>
+<td align="right">1175</td>
+<td align="right">10.68</td>
+<td align="right">1675</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">125</td>
+<td align="left">Jordan 12 University Gold</td>
+<td align="right">190</td>
+<td align="right">267</td>
+<td align="right">1.41</td>
+<td align="right">18595</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">58</td>
+<td align="left">Air Max Orange</td>
+<td align="right">140</td>
+<td align="right">253</td>
+<td align="right">1.81</td>
+<td align="right">620</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">44</td>
+<td align="left">Air Max Green</td>
+<td align="right">140</td>
+<td align="right">263</td>
+<td align="right">1.88</td>
+<td align="right">728</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">112</td>
+<td align="left">Yeezy 380 Blue Oat</td>
+<td align="right">230</td>
+<td align="right">279</td>
+<td align="right">1.21</td>
+<td align="right">1039</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">56</td>
+<td align="left">Off-White Jordan 4 Sail</td>
+<td align="right">200</td>
+<td align="right">1090</td>
+<td align="right">5.45</td>
+<td align="right">4744</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="histogram" class="section level2">
+<h2><span class="header-section-number">4.2</span> Histogram</h2>
+<p><img src="Sneaker%20Histogram.png" /></p>
+<p>The first visualization that the team created was a Histogram for each sneaker displaying the distribution of sentiment counts. The sneakers that displayed the least popularity were those that had negative sentiment counts or sentiment counts close to 0.</p>
+<p>In the sample, the Jordan 11 Low Concord was perceived to have the lowest popularity as shown by a skewed left tail. This could be because the shoe is a low version of the Jordan 11, and low-top Jordan 11’s historically have not been as popular as other Jordan sneakers. Moreover, sneaker culture is generally dominated by males, as evidenced by the number of male sneaker releases as opposed to female sneaker releases, and the Jordan 11 Low Concord’s were a womens sneaker release. Therefore, less Twitter activity might be expected from the shoe.</p>
+<p>The Air Max sneakers also didn’t receive very high sentiment counts as compared to other shoes, which might be due to the simplicity of the sneakers, as they both were just green and orange colorways of the Air Max model.</p>
+<p>Generally speaking, sneaker collaborations tend to be more popular than regular models of sneakers due to the exclusivity of the collaboration and the unique design of the sneaker, among other variables. This phenomena turned out to be true in the sample as the Grateful Dead Dunks and Off-White Jordan 4 Sails received some of the highest sentiment counts. Currently, most Off-White collaborations have been very popular as Virgil Abloh is one of the most highly-respected designers in the industry. Also, Nike Dunks have been going through a resurgence as the most popular sneaker model in the sneaker industry at the time of this study.</p>
+<p>However, one interesting trend to note is that the Off-White Jordan 4 Sail had one very low sentiment count, the lowest of the entire sample. The team recognized this might be due to the backlash on Twitter for those that didn’t receive the sneaker on Nike’s SNKR app after the release. The data collection of each of the sneakers didn’t occur at the same time on the day that each sneaker released, therefore there might be some inconsistencies in the data collection process. Nonetheless, the team believes the data collected still holds enough quality to uncover valuable insights related to sentiment.</p>
+<p>Furthermore, the Jordan 12 University Gold sneakers were moderately popular in the sample, and the Yeezy 380 Blue Oat’s received the highest sentiment count for a single day of the entire sample. The Jordan and Kanye West brands are known the be very strong in the sneaker industry, which could explain this insight.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-visualization.html#cb7-1"></a><span class="co">#Historgram</span></span>
+<span id="cb7-2"><a href="data-visualization.html#cb7-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb7-3"><a href="data-visualization.html#cb7-3"></a>cbPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#006600&quot;</span>, <span class="st">&quot;#FF9933&quot;</span>,<span class="st">&quot;#FFFF00&quot;</span>,<span class="st">&quot;#0000CC&quot;</span>, <span class="st">&quot;#000000&quot;</span>, <span class="st">&quot;#663300&quot;</span>, <span class="st">&quot;#33CCFF&quot;</span>, <span class="st">&quot;FF0000&quot;</span>)</span>
+<span id="cb7-4"><a href="data-visualization.html#cb7-4"></a><span class="kw">ggplot</span>(final_data_frame) <span class="op">+</span></span>
+<span id="cb7-5"><a href="data-visualization.html#cb7-5"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span>total_sentiment, <span class="dt">fill =</span> source),<span class="dt">alpha=</span><span class="fl">0.6</span>, <span class="dt">binwidth =</span> <span class="dv">10</span>) <span class="op">+</span></span>
+<span id="cb7-6"><a href="data-visualization.html#cb7-6"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">10</span>)) <span class="op">+</span></span>
+<span id="cb7-7"><a href="data-visualization.html#cb7-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Occurances&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Sentiment Values&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Twitter Sentiment Histogram </span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Sneakers:&quot;</span>) <span class="op">+</span></span>
+<span id="cb7-8"><a href="data-visualization.html#cb7-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>)) <span class="op">+</span></span>
+<span id="cb7-9"><a href="data-visualization.html#cb7-9"></a><span class="st">  </span><span class="kw">theme</span>(,</span>
+<span id="cb7-10"><a href="data-visualization.html#cb7-10"></a>        <span class="dt">strip.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">7</span>)</span>
+<span id="cb7-11"><a href="data-visualization.html#cb7-11"></a>  ) <span class="op">+</span></span>
+<span id="cb7-12"><a href="data-visualization.html#cb7-12"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>source) <span class="op">+</span></span>
+<span id="cb7-13"><a href="data-visualization.html#cb7-13"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)</span></code></pre></div>
+</div>
+<div id="line-chart" class="section level2">
+<h2><span class="header-section-number">4.3</span> Line Chart</h2>
+<p><img src="Sneaker%20Line%20Chart.png" /></p>
+<p>The second visualization that the team created was a Line Chart illustrating the time-series aspect of each sneakers sentiment from the collection of the data, most often eight days before the release, to the time of each sneaker’s release.</p>
+<p>Most of the individual sentiment trends are outlined in the histogram chart, however, the most interesting aspect to note in the line chart is which day the sentiment for each sneaker tends to ramp up. Looking at the chart, sentiment tends to explode at about five days before the release of a sneaker. The team hypothesized that this trend was due to the weekly cycle of sneaker releases. Generally, a handful of “popular” sneakers are released each week, and sometimes more on Holiday weekends. Therefore, “sneaker heads” might only be focused on a small subset of sneakers each week before turning their attention to the next week’s sneaker releases. As stated previously, despite not having a developer’s account, the team believes that due to this trend, seven to eight days is adequate to gauge the interest in a sneaker prior to its release. However, if the team were to continue this study, additional dates before release might be studied such as when the sneaker is first announced to be released on various sneaker news sites.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-visualization.html#cb8-1"></a><span class="co">#Line Chart</span></span>
+<span id="cb8-2"><a href="data-visualization.html#cb8-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb8-3"><a href="data-visualization.html#cb8-3"></a>final_data_frame<span class="op">$</span>day &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb8-4"><a href="data-visualization.html#cb8-4"></a>cbPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#006600&quot;</span>, <span class="st">&quot;#FF9933&quot;</span>,<span class="st">&quot;#FFFF00&quot;</span>,<span class="st">&quot;#0000CC&quot;</span>, <span class="st">&quot;#000000&quot;</span>, <span class="st">&quot;#663300&quot;</span>, <span class="st">&quot;#33CCFF&quot;</span>, <span class="st">&quot;FF0000&quot;</span>)</span>
+<span id="cb8-5"><a href="data-visualization.html#cb8-5"></a><span class="kw">ggplot</span>(final_data_frame, <span class="kw">aes</span>(<span class="dt">x =</span> day, <span class="dt">y =</span> total_sentiment, <span class="dt">group =</span> source)) <span class="op">+</span></span>
+<span id="cb8-6"><a href="data-visualization.html#cb8-6"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">color =</span> source))<span class="op">+</span></span>
+<span id="cb8-7"><a href="data-visualization.html#cb8-7"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> source))<span class="op">+</span></span>
+<span id="cb8-8"><a href="data-visualization.html#cb8-8"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span></span>
+<span id="cb8-9"><a href="data-visualization.html#cb8-9"></a><span class="st">  </span><span class="kw">scale_x_reverse</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb8-10"><a href="data-visualization.html#cb8-10"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">15</span>,<span class="dv">45</span>,<span class="dv">5</span>))<span class="op">+</span></span>
+<span id="cb8-11"><a href="data-visualization.html#cb8-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Sentiment&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Days to Launch&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Time-Series Twitter Sentiment</span><span class="ch">\n</span><span class="st">&quot;</span> ) <span class="op">+</span></span>
+<span id="cb8-12"><a href="data-visualization.html#cb8-12"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">color=</span><span class="kw">guide_legend</span>(<span class="st">&quot;Sneaker:&quot;</span>))<span class="op">+</span></span>
+<span id="cb8-13"><a href="data-visualization.html#cb8-13"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+</div>
+<div id="scatter-plots" class="section level2">
+<h2><span class="header-section-number">4.4</span> Scatter Plots</h2>
+<p><img src="Scatter%20Plot%201.png" /></p>
+<p>The third visualization that the team created was a scatter plot explaining the linear relationship between total sentiment for each shoe from the team’s collection to the sneakers release and the markup factor from retail to resale that the sneaker sold for. The correlation between the two variables was .586 which, given the small sample size, is a reasonable solid correlation.</p>
+<p>From the beginning, the team theorized that Twitter sentiment can give an accurate prediction of a sneaker’s resale price. Therefore, if the team were to continue this study and collect more data, the team believes the correlation would improve. However, it is also important to discuss the types of shoes that would be collected, as particular models and brands are more popular than others. Hence, the team would create a list of models that would be exclusively collected to further flush out the relationship between Twitter sentiment and the markup factor from retail price.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-visualization.html#cb9-1"></a><span class="co">#Scatter Plots and MLRM</span></span>
+<span id="cb9-2"><a href="data-visualization.html#cb9-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb9-3"><a href="data-visualization.html#cb9-3"></a><span class="kw">ggplot</span>(scatter_frame, <span class="kw">aes</span>(<span class="dt">x =</span> sum_total_sentiment, <span class="dt">y =</span> markup)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb9-4"><a href="data-visualization.html#cb9-4"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb9-5"><a href="data-visualization.html#cb9-5"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span>lm, <span class="dt">se =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
+<span id="cb9-6"><a href="data-visualization.html#cb9-6"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Markup Factor from Retail&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Total Sentiment&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Correlation&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Correlation = 0.586&quot;</span>)<span class="op">+</span></span>
+<span id="cb9-7"><a href="data-visualization.html#cb9-7"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))<span class="op">+</span></span>
+<span id="cb9-8"><a href="data-visualization.html#cb9-8"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">12</span>,<span class="dv">2</span>))<span class="op">+</span></span>
+<span id="cb9-9"><a href="data-visualization.html#cb9-9"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">250</span>,<span class="dv">50</span>))<span class="op">+</span></span>
+<span id="cb9-10"><a href="data-visualization.html#cb9-10"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>) <span class="op">+</span></span>
+<span id="cb9-11"><a href="data-visualization.html#cb9-11"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p><img src="Scatter%20Plot%202.png" /></p>
+<p>The fourth visualization that the team created was a scatter plot explaining the linear relationship between sales of each sneaker on the StockX platform and the markup factor from retail to resale that the sneaker sold for. The correlation was calculated to be -0.221, which isn’t remarkable, but shows a weak negative correlation. Generally, the higher the production of an individual sneaker, the less it will sell for on the resale market due to an increasing lack of exclusivity. The team believes that collecting additional data on future sneaker releases will help to more clearly define the relationship.</p>
+<p>Moreover, most companies will not release their production numbers for individual sneakers. Therefore, due to the popularity of StockX, the team used sales on StockX as a substitute for the actual production numbers. The team would consider aggregating the sales on other websites as well, such as GOAT, to better estimate production numbers in the future. Additionally, the team will set a strict timeline after the release of the sneaker to calculate the total number of sales to keep consistency across sneakers.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-visualization.html#cb10-1"></a><span class="kw">ggplot</span>(scatter_frame, <span class="kw">aes</span>(<span class="dt">x =</span> sales, <span class="dt">y =</span> markup)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb10-2"><a href="data-visualization.html#cb10-2"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb10-3"><a href="data-visualization.html#cb10-3"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span>lm, <span class="dt">se =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
+<span id="cb10-4"><a href="data-visualization.html#cb10-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Markup Factor from Retail&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Sales on StockX&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Correlation&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Correlation = -0.221&quot;</span>)<span class="op">+</span></span>
+<span id="cb10-5"><a href="data-visualization.html#cb10-5"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))<span class="op">+</span></span>
+<span id="cb10-6"><a href="data-visualization.html#cb10-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">12</span>,<span class="dv">2</span>))<span class="op">+</span></span>
+<span id="cb10-7"><a href="data-visualization.html#cb10-7"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">20000</span>,<span class="dv">5000</span>))<span class="op">+</span></span>
+<span id="cb10-8"><a href="data-visualization.html#cb10-8"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>) <span class="op">+</span></span>
+<span id="cb10-9"><a href="data-visualization.html#cb10-9"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p><img src="Linear%20Regression.png" /></p>
+<p>Finally, the team conducted a multi-linear regression model to predict the markup factor from retail based on Twitter sentiment and sales on StockX. The team acknowledges that, to properly predict the markup factor, other variables need to be added to the model, and their exclusion can skew the model. Likewise, the team did not check for other assumptions in the model, such as the mean independence assumption, due to the small amount of data the team collected. However, for the purposes of the competition, the team wanted to understand the predictive power of the two variables collected in the study.</p>
+<p>As the model shows, none of the variables are statistically significant. But, overall the model has an adjusted r squared value of 20.37% showing that 20.37% of the total variance can be explained by the variables the team concluded. Moreover, the F-test also did not meet a 10% significance level, indicating the model does not provide a better fit than an intercept only model.
+Therefore, the team concludes that there many other factors worth examining to accurately predict a sneaker’s markup from retail. Although, the team believes that Twitter sentiment is still a valid variable if a new model were to be created.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-visualization.html#cb11-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(markup <span class="op">~</span><span class="st"> </span>sum_total_sentiment <span class="op">+</span><span class="st"> </span>sales, <span class="dt">data=</span>scatter_frame)  <span class="co"># build linear regression model on full data</span></span>
+<span id="cb11-2"><a href="data-visualization.html#cb11-2"></a><span class="kw">print</span>(fit)</span>
+<span id="cb11-3"><a href="data-visualization.html#cb11-3"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="combining-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
